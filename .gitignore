@@ -1,0 +1,13 @@
+.env
+.env.*
+*.local.json
+radar-data/
+daily/
+downloads/
+logs/
+__pycache__/
+*.pyc
+.build.lock
+.DS_Store
+Thumbs.db
+node_modules/

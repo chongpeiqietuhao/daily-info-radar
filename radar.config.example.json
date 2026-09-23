@@ -1,0 +1,10 @@
+{
+  "timezone": "Asia/Shanghai",
+  "topics": ["AI/科技", "金融/商业"],
+  "target_per_layer": 5,
+  "candidate_target_per_layer": [12, 20],
+  "primary_window": "yesterday-calendar-day",
+  "fallback_days": [3, 7],
+  "output_root": "./radar-data",
+  "language": "zh-CN"
+}
