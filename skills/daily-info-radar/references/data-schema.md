@@ -17,7 +17,7 @@ UTF-8 JSON。结构校验不能代替事实核验。数字/日期/专名需能�
 
 条目字段：id,event_id,layer,title,summary,value,angle,unknown,source_ids,topic,published_at,event_time,updated_at,freshness,verified_at,claims。
 
-layer为1—6，第六层为地产；topic为AI/科技、金融/商业或地产；unknown字符串数组。时间缺失用null。freshness精确写昨日/近三日补充/近七日补充/抓取日发现。detail可选对象，GitHub/PH应有用途、门槛、许可/价格、维护、试用状态；地产政策应写适用项目、施行日期和过渡边界，市场数据应写城市、期间、样本与统计口径。
+layer为1—6，第六层为地产；当前看板支持的topic为AI/科技、金融/商业或地产，配置的 `topics` 也应使用这些值；城市焦点由 `real_estate_focus` 单独指定。unknown字符串数组。时间缺失用null。freshness精确写昨日/近三日补充/近七日补充/抓取日发现。detail可选对象，GitHub/PH应有用途、门槛、许可/价格、维护、试用状态；地产政策应写适用项目、施行日期和过渡边界，市场数据应写城市、期间、样本与统计口径。
 
 claims非空，每项text,kind,R,components,source_ids,boundary。R为四项之和，无证据R和components均null。例如：
 
