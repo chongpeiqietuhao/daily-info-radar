@@ -30,6 +30,9 @@ class RadarTests(unittest.TestCase):
         with self.assertRaises(ValueError):validate(d)
         d=sample();d['items'][0]['source_ids']=['missing']
         with self.assertRaises(ValueError):validate(d)
+    def test_real_estate_layer_is_supported(self):
+        d=sample();d['items'][0]['layer']=6;d['items'][0]['topic']='地产';d['sources'][0]['layer']=6
+        self.assertEqual(validate(d)['counts']['by_layer']['6'],1)
     def test_path_traversal_and_window(self):
         d=sample();d['edition']='../oops'
         with self.assertRaises(ValueError):validate(d)

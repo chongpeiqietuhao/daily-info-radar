@@ -1,6 +1,7 @@
 {
   "timezone": "Asia/Shanghai",
-  "topics": ["AI/科技", "金融/商业"],
+  "topics": ["AI/科技", "金融/商业", "地产"],
+  "real_estate_focus": {"primary_city": "上海", "comparison_scope": "全国及重点城市"},
   "target_per_layer": 5,
   "candidate_target_per_layer": [12, 20],
   "primary_window": "yesterday-calendar-day",

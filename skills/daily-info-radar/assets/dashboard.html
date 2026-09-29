@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f8fa">
-<meta name="description" content="个人信息雷达：以原始证据为基础的 AI、科技与金融每日阅读看板。">
+<meta name="description" content="个人信息雷达：以原始证据为基础的 AI、科技、金融与地产每日阅读看板。">
 <title>信息雷达 · 每日值得知道</title>
 <style>
 :root{color-scheme:light;--bg:#f7f8fa;--paper:#fff;--ink:#202d42;--muted:#58677b;--line:#e2e7ed;--blue:#255cce;--blue-soft:#eef4ff;--green:#216753;--amber:#855318;--radius:12px}
@@ -31,13 +31,13 @@ dialog{border:0;background:#fff;color:var(--ink);padding:0;max-height:100dvh;hei
   <div class="sidebottom"><a class="plain" href="#panel=sources">来源与获取记录 ↗</a><a class="plain" href="#panel=method">评分规则与边界 ↗</a><p><span class="dot"></span>本地阅读记录<br>收藏与已读保存在此浏览器</p></div>
  </aside>
  <div class="workspace">
-  <header class="topbar"><span class="crumb">个人研究室 <span aria-hidden="true"> / </span> 每日简报</span><label class="searchbox"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr">搜索标题、摘要和来源</span><input id="search" name="q" type="search" autocomplete="off" placeholder="搜索信息，例如：模型、金融…"></label></header>
+  <header class="topbar"><span class="crumb">个人研究室 <span aria-hidden="true"> / </span> 每日简报</span><label class="searchbox"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr">搜索标题、摘要和来源</span><input id="search" name="q" type="search" autocomplete="off" placeholder="搜索信息，例如：模型、金融、地产…"></label></header>
   <main id="main" class="main" tabindex="-1">
    <div class="intro"><div><p class="eyebrow" style="margin:0 0 8px">少一点噪音，多一点依据</p><h1>每日值得知道</h1><p id="edition-meta"></p></div><div class="edition-control"><label for="edition">历史记录</label><select id="edition" name="edition"><option value="full">9月22日 · 完整版</option><option value="brief">9月22日 · 早期简报</option></select></div></div>
    <div class="notice" id="snapshot-note"></div>
    <section id="priorities" aria-labelledby="priority-heading"><div class="section-head"><h2 id="priority-heading">本期先看这 3 件事</h2><span class="meta">按相关性、影响与核实成本排序</span></div><div class="picks" id="picks"></div></section>
    <div class="reading-grid"><section class="feed" aria-labelledby="feed-heading"><div class="feedheader"><h2 id="feed-heading" tabindex="-1">全部信息</h2><span class="badgecount" id="total-count"></span></div>
-    <div class="filters"><label class="sr" for="topic">主题</label><select id="topic" name="topic"><option value="all">全部主题</option><option value="AI/科技">AI / 科技</option><option value="金融/商业">金融 / 商业</option></select><label class="sr" for="reading">阅读状态</label><select id="reading" name="state"><option value="all">全部状态</option><option value="unread">仅未读</option><option value="read">已读</option><option value="saved">我的收藏</option></select><button class="clear" id="clear">重置筛选</button></div>
+    <div class="filters"><label class="sr" for="topic">主题</label><select id="topic" name="topic"><option value="all">全部主题</option><option value="AI/科技">AI / 科技</option><option value="金融/商业">金融 / 商业</option><option value="地产">地产</option></select><label class="sr" for="reading">阅读状态</label><select id="reading" name="state"><option value="all">全部状态</option><option value="unread">仅未读</option><option value="read">已读</option><option value="saved">我的收藏</option></select><button class="clear" id="clear">重置筛选</button></div>
     <p class="resultnote" id="result-note" role="status" aria-live="polite"></p><div id="articles"></div>
    </section><aside class="rail" aria-label="阅读进度和证据说明"><section class="railbox"><h2>你的阅读进度</h2><div class="progress-line"><span id="progress-text"></span><span id="progress-percent"></span></div><div class="progress" role="progressbar" aria-label="本期阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div><p>值得回看的信息，先收藏。<br>完整读过后，再标记为已读。</p><div class="storage-warning" id="storage-warning" hidden>浏览器未能保存阅读记录。本次仍可使用；建议导出记录后换用普通浏览窗口。</div><button id="export-state" class="plain">导出阅读记录 ↓</button></section>
    <section class="railbox"><h2>看分数，也看它证明什么</h2><span class="status-tag">已确认事实</span><p>原始材料支持的发布、报价或统计。具体结论仍受口径限制。</p><div class="rule"><span class="status-tag claim">主张 / 观点 / 个人经历</span><p>保留说话者与验证边界。产品效果未实测，社区经验不代表普遍结果。</p></div><div class="rule"><div class="legend-row"><span>原始性</span><span>30</span></div><div class="legend-row"><span>支持程度</span><span>30</span></div><div class="legend-row"><span>独立复核</span><span>20</span></div><div class="legend-row"><span>时间与口径</span><span>20</span></div><p>R 是证据完整度，<strong>不是真实概率</strong>。</p></div><a class="textlink" href="#panel=method">查看完整规则 →</a><a class="textlink" href="#panel=sources">来源与获取失败清单 →</a></section></aside></div>
@@ -52,8 +52,8 @@ dialog{border:0;background:#fff;color:var(--ink);padding:0;max-height:100dvh;hei
 <script>
 'use strict';
 const DATA=JSON.parse(document.getElementById('radar-data').textContent);
-const LAYERS=['全部信息','新闻与原始材料','GitHub','Hacker News','Product Hunt','Reddit'];
-const LABELS=['','新闻 · 原始材料','开源项目','技术讨论','产品发现','使用反馈'];
+const LAYERS=['全部信息','新闻与原始材料','GitHub','Hacker News','Product Hunt','Reddit','地产'];
+const LABELS=['','新闻 · 原始材料','开源项目','技术讨论','产品发现','使用反馈','地产政策与市场'];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number=n=>new Intl.NumberFormat('zh-CN').format(n);
@@ -62,7 +62,7 @@ const safeUrl=u=>{try {const v=new URL(u);return v.protocol==='https:'||v.protoc
 let storageOK=true, records={read:[],saved:[]};
 try{const saved=JSON.parse(localStorage.getItem('signal-radar-reading-v1')||'null');if(saved&&Array.isArray(saved.read)&&Array.isArray(saved.saved)){records={read:saved.read.filter(x=>typeof x==='string'),saved:saved.saved.filter(x=>typeof x==='string')};}}catch{storageOK=false;}
 let settings, current, sourceMap, lastTrigger, closingByRoute=false, toastTimer;
-function route(){const p=new URLSearchParams(location.hash.slice(1));return {edition:Object.hasOwn(DATA,p.get('edition')||'')?p.get('edition'):'full',layer:/^[1-5]$/.test(p.get('layer')||'')?Number(p.get('layer')):0,topic:['AI/科技','金融/商业'].includes(p.get('topic'))?p.get('topic'):'all',state:['unread','read','saved'].includes(p.get('state'))?p.get('state'):'all',q:p.get('q')||'',item:p.get('item')||'',panel:['sources','method'].includes(p.get('panel'))?p.get('panel'):''};}
+function route(){const p=new URLSearchParams(location.hash.slice(1));return {edition:Object.hasOwn(DATA,p.get('edition')||'')?p.get('edition'):'full',layer:/^[1-6]$/.test(p.get('layer')||'')?Number(p.get('layer')):0,topic:['AI/科技','金融/商业','地产'].includes(p.get('topic'))?p.get('topic'):'all',state:['unread','read','saved'].includes(p.get('state'))?p.get('state'):'all',q:p.get('q')||'',item:p.get('item')||'',panel:['sources','method'].includes(p.get('panel'))?p.get('panel'):''};}
 function routeString(next){const p=new URLSearchParams();Object.entries(next).forEach(([k,v])=>{if(v&&v!=='all'&&!(k==='edition'&&v==='full'))p.set(k,v);});return '#'+p.toString();}
 function go(change,replace=false){const next={...route(),...change};const hash=routeString(next);if(replace){history.replaceState(null,'',hash);render();}else if(location.hash!==hash){location.hash=hash;}else{render();}}
 function sourceLinks(ids){return ids.map(id=>{const s=sourceMap[id];return s?`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`:'';}).join('');}
@@ -110,7 +110,7 @@ function renderPanel(){
  $('dialog-body').innerHTML='<h2 id="dialog-title">来源与获取记录</h2><p>成功表示读取到材料，不表示材料中的全部说法已被证实。以下保留各批次时间。</p>'+groups.map(g=>`<h3>${g} · ${number(current.sources.filter(s=>s.status===g).length)}</h3>${current.sources.filter(s=>s.status===g).map(s=>`<div class="sourcebox">${s.url?`<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.name)} ↗</a>`:esc(s.name)}<p>${esc(s.note||'正文读取成功')}</p><p>${esc(s.retrieved_during)}</p></div>`).join('')}`).join('')+`<h3>实际检索范围</h3><ul>${(current.research_log||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`;
  }else{
  $('dialog-kicker').textContent='方法 / 证据分与价值';
- $('dialog-body').innerHTML=`<h2 id="dialog-title">让每条结论都有边界</h2><p>五层分别提供事件、开源项目、技术讨论、产品和使用经历。它们不是五个真伪等级。</p><h3>R：针对具体主张的证据完整度</h3><table class="detail-table"><caption class="sr">证据评分可选档位</caption><tbody><tr><th scope="row">原始性</th><td>0 / 15 / 30</td></tr><tr><th scope="row">支持程度</th><td>0 / 15 / 30</td></tr><tr><th scope="row">独立复核</th><td>0 / 10 / 20</td></tr><tr><th scope="row">时间与口径</th><td>0 / 10 / 20</td></tr></tbody></table><p>四项相加，满分 100。<strong>不是正确率，也不是真实概率。</strong>列表只展示首项关键主张的分数，详情展开全部主张。未实测的产品效果不借用发布事实的分数。</p><h3>怎么排优先级</h3><p>根据与你的需求相关性、变化与影响、能否帮助判断，以及下一步核实成本进行编辑排序。热度不进入证据分；GitHub Star 也不是引用量。</p><h3>从 Horizon 借鉴什么</h3><p>${esc(current.horizon_note)}</p><a href="https://github.com/Thysrael/Horizon" target="_blank" rel="noopener noreferrer">Horizon 原仓库 ↗</a><h3>本期限制</h3><ul>${(current.limitations||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul><h3>更新方式</h3><p>本页显示已归档快照，刷新页面不会启动搜索。采集由运行本 Skill 的研究任务执行；具体调度以本机任务设置为准。历史记录只展示实际保存过的日报。</p>`;
+ $('dialog-body').innerHTML=`<h2 id="dialog-title">让每条结论都有边界</h2><p>六层分别提供事件、开源项目、技术讨论、产品、使用经历与地产政策/市场信号。它们不是六个真伪等级。</p><h3>R：针对具体主张的证据完整度</h3><table class="detail-table"><caption class="sr">证据评分可选档位</caption><tbody><tr><th scope="row">原始性</th><td>0 / 15 / 30</td></tr><tr><th scope="row">支持程度</th><td>0 / 15 / 30</td></tr><tr><th scope="row">独立复核</th><td>0 / 10 / 20</td></tr><tr><th scope="row">时间与口径</th><td>0 / 10 / 20</td></tr></tbody></table><p>四项相加，满分 100。<strong>不是正确率，也不是真实概率。</strong>列表只展示首项关键主张的分数，详情展开全部主张。未实测的产品效果不借用发布事实的分数。</p><h3>怎么排优先级</h3><p>根据与你的需求相关性、变化与影响、能否帮助判断，以及下一步核实成本进行编辑排序。热度不进入证据分；GitHub Star 也不是引用量。</p><h3>从 Horizon 借鉴什么</h3><p>${esc(current.horizon_note)}</p><a href="https://github.com/Thysrael/Horizon" target="_blank" rel="noopener noreferrer">Horizon 原仓库 ↗</a><h3>本期限制</h3><ul>${(current.limitations||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul><h3>更新方式</h3><p>本页显示已归档快照，刷新页面不会启动搜索。采集由运行本 Skill 的研究任务执行；具体调度以本机任务设置为准。历史记录只展示实际保存过的日报。</p>`;
  }
  if(!dialog.open){lastTrigger=document.activeElement;dialog.showModal();$('close-dialog').focus();}else if(!dialog.contains(document.activeElement))$('close-dialog').focus();
 }

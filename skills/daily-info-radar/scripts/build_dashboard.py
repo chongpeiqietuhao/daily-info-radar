@@ -13,7 +13,7 @@ import tempfile
 import zipfile
 
 SKILL=Path(__file__).resolve().parents[1]
-LAYERS={1:'新闻与原始材料',2:'GitHub',3:'Hacker News',4:'Product Hunt',5:'Reddit'}
+LAYERS={1:'新闻与原始材料',2:'GitHub',3:'Hacker News',4:'Product Hunt',5:'Reddit',6:'地产'}
 COMPONENTS={'原始性':{0,15,30},'支持程度':{0,15,30},'独立复核':{0,10,20},'时间与口径':{0,10,20}}
 
 def require(condition,message):
@@ -49,8 +49,8 @@ def validate(raw):
         for k in ('id','event_id','layer','title','summary','value','angle','unknown','source_ids','topic','freshness','claims'):
             require(k in item,'Item missing '+k)
         require(item['id'] not in ids,'Duplicate item id');ids.add(item['id'])
-        require(item['layer'] in LAYERS,'Layer must be 1..5')
-        require(item['topic'] in ('AI/科技','金融/商业'),'Unsupported topic')
+        require(item['layer'] in LAYERS,'Layer must be 1..6')
+        require(item['topic'] in ('AI/科技','金融/商业','地产'),'Unsupported topic')
         require(isinstance(item['unknown'],list),'unknown must be a list')
         require(item['source_ids'] and set(item['source_ids'])<=source_ids,'Broken item source reference')
         require(item['claims'],'Missing claim evidence')

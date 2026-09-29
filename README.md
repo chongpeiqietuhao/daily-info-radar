@@ -1,6 +1,6 @@
 # Daily Info Radar · 每日信息雷达
 
-一个可分享的 AI 研究 Skill 和离线新闻看板。将新闻、GitHub、Hacker News、Product Hunt、Reddit 组织成五层，每层约5条，并区分事实、厂商主张、个人经历和待核实项。
+一个可分享的 AI 研究 Skill 和离线新闻看板。将新闻、GitHub、Hacker News、Product Hunt、Reddit、地产组织成六层，每层约5条，并区分事实、厂商主张、个人经历和待核实项。地产层优先上海政策原文、市场、土地与融资。
 
 重点是可追溯的信息，而不是凑足条数或热度排名。具备逐项证据评分、事件去重、昨日自然日窗口、历史归档、搜索、收藏和阅读状态。界面为自包含HTML，可直接离线打开。
 
@@ -10,7 +10,7 @@
 
 在支持Skill的助手中输入：
 
-> 使用 $daily-info-radar，搜索昨天的 AI/科技与金融/商业信息，保存到我的 daily-info-radar 文件夹。
+> 使用 $daily-info-radar，搜索昨天的 AI/科技、金融/商业与上海地产信息，保存到我的 daily-info-radar 文件夹。
 
 需要能联网检索的AI助手及Python 3.10+。生成器仅使用Python标准库；其他IANA时区在Windows可能需自行安装tzdata，Asia/Shanghai内置回退无需额外包。Agent Reach、Firecrawl不是硬依赖。
 
